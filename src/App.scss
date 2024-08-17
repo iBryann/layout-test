@@ -3,11 +3,11 @@
 }
 
 .show {
-  --sidebarW: 250px;
+  --sidebarW: 296px;
 }
 
 .hide {
-  --sidebarW: 100px;
+  --sidebarW: 72px;
 }
 
 .layout {
@@ -16,6 +16,8 @@
 
   --sidebarH: 100vh;
   --contentW: calc(100% - var(--sidebarW));
+  --bodyMargin: 2rem;
+  --bodyW: calc(min(100%, 1000px) - (var(--bodyMargin) * 2));
   --transition: 500ms;
 
   * {
@@ -52,9 +54,9 @@
 
     .body {
       background-color: rgb(182, 255, 182);
-      width: calc(min(100%, 1000px) - 4rem);
+      width: var(--bodyW);
       flex: 1;
-      margin: 2rem;
+      margin: var(--bodyMargin);
     }
   }
 }
