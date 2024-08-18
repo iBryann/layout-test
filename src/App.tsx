@@ -1,6 +1,7 @@
 import "./styles/reset.css";
 import "./App.scss";
 import { useState } from "react";
+import { Table } from "./Table";
 
 function App() {
   const [collapse, setCollapse] = useState(true);
@@ -24,6 +25,9 @@ function App() {
         </div>
         <div className="body">
           <h1 className="title">CONTENT</h1>
+
+          <Table />
+
           {contentList}
         </div>
       </div>
