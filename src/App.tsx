@@ -3,25 +3,29 @@ import "./App.scss";
 import { useState } from "react";
 
 function App() {
-  const [show, setShow] = useState(true);
-
-  const contentList = [...new Array(100)].fill("Content").map((item, index) => (
-    <p key={index}>
-      {index + 1}. {item}
-    </p>
+  const [collapse, setCollapse] = useState(true);
+  // const [show, setShow] = useState(true);
+  const contentList = [...new Array(100)].map((_, index) => (
+    <div key={index}>{index}</div>
   ));
 
   return (
-    <div className={`layout ${show ? "show" : "hide"}`}>
-      <div className="sidebar">Sidebar</div>
+    <div className={`layout ${collapse ? "expand" : "collapse"}`}>
+      <div className="sidebar">
+        <button onClick={() => setCollapse(!collapse)}>Toggle menu</button>
+        <h1 className="title">SIDEBAR</h1>
+      </div>
 
       <div className="content">
         <div className="header">
-          <button onClick={() => setShow(!show)}>Toggle</button>
+          <button onClick={() => setCollapse(!collapse)}>Toggle menu</button>
 
-          {contentList.slice(0, 2)}
+          <h1 className="title">HEADER</h1>
         </div>
-        <div className="body">{contentList}</div>
+        <div className="body">
+          <h1 className="title">CONTENT</h1>
+          {contentList}
+        </div>
       </div>
     </div>
   );
