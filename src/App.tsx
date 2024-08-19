@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Table } from "./Table";
 
 function App() {
-  const [collapse, setCollapse] = useState(true);
+  const [collapse, setCollapse] = useState(false);
   // const [show, setShow] = useState(true);
   const contentList = [...new Array(100)].map((_, index) => (
     <div key={index}>{index}</div>
   ));
 
   return (
-    <div className={`layout ${collapse ? "expand" : "collapse"}`}>
+    <div className={`layout ${collapse ? "collapse" : ""}`}>
       <div className="sidebar">
         <button onClick={() => setCollapse(!collapse)}>Toggle menu</button>
         <h1 className="title">SIDEBAR</h1>
