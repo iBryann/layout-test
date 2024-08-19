@@ -75,7 +75,7 @@
     width: var(--sidebarW);
     height: var(--sidebarH);
     transition: var(--transition) all;
-    border-right: 1px solid;
+    box-shadow: 2px 0 4px 0px rgba(0, 0, 0, 0.2);
   }
 
   .content {
